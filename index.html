@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>REM – Real Estate Market</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    color: #2c3e50;
+  }
+
+  header {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .pillars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .pillar {
+    flex: 1;
+    min-width: 240px;
+  }
+
+  .cta {
+    background: #2c5364;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .cta a {
+    background: white;
+    color: #2c3e50;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+
+  .hero-content {
+    animation: fadeIn 1.6s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+</head>
+<body>
+  <header class="hero" style="background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color: white; padding: 60px 20px; text-align: center;">
+  <div class="hero-content" style="max-width: 800px; margin: auto;">
+    <img src="assets/remlogo.png" alt="REM Logo" style="width: 90px; margin-bottom: 10px;" />
+    <h1 style="font-size: 2.4rem; font-weight: 700;">REM – Real Estate Market</h1>
+    <p style="font-size: 1rem; margin-bottom: 20px;">
+      Where Buyers Lead and the Market Follows<br />
+      <em>No listings. No upfront fees.</em>
+    </p>
+    <a href="wishlist.html" style="background: white; color: #2c3e50; padding: 10px 22px; font-weight: bold; border-radius: 6px; text-decoration: none;">Start Your Wishlist</a>
+    <br>
+    <a href="wishlist-wallet.html" style="margin-top: 12px; display: inline-block; color: #ffffff; text-decoration: underline;">
+      View My Wishlist Wallet
+    </a>
+  </div>
+  </header>
+  <section class="testimonials" style="padding: 50px 20px; background: #fff; text-align: center;">
+    <h2>What Makes REM Different?</h2>
+    <blockquote style="max-width: 600px; margin: 30px auto; font-style: italic; color: #555;">
+      “We built REM to flip the real estate market — not with listings, but with relationships. Our buyers lead, our sellers win, and no one pays until results speak.”  
+     <br /><br /><strong>— Liwani, Founder</strong>
+  </blockquote>
+</section>
+
+  <section id="mission">
+    <h2>Our Mission</h2>
+    <p>
+      REM is building the world’s smartest real estate ecosystem — 
+      where buyers lead, sellers match, and the entire property market connects through intent, 
+      not inventory. We’re not listing homes. We’re redesigning how people move, build, and own
+    </p>
+  </section>
+
+  <section id="ecosystem">
+    <h2>The REM Ecosystem</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Buyers</h3>
+        <p>Create wishlists and get matched with your dream home for free.</p>
+      </div>
+      <div class="pillar">
+        <h3>Sellers</h3>
+        <p>Connect with verified buyers whose wishlist matches your property. No listings. No upfront costs. Only pay 3% on a successful sale.</p>
+      </div>
+      <div class="pillar">
+        <h3>Mortgage Providers</h3>
+        <p>Pre-approve the right buyers at the right time, automatically.</p>
+      </div>
+      <div class="pillar">
+        <h3>Developers</h3>
+        <p>Build based on real data and market signals.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Join the Revolution</h2>
+    <p>Be part of South Africa’s most powerful real estate movement.</p>
+    <a href="ecosystem.html">Request Early Access</a>
+    <p style="margin-top: 20px;">
+    Already started a wishlist?
+  <a href="wishlist-wallet.html" style="color: #223d47; text-decoration: underline;">Open your Wallet</a>
+  </p>
+  </section>
+
+  <footer class="footer" style="text-align: center; padding: 40px 20px; font-size: 0.9rem; background: #f2f2f2;">
+  © 2025 REM – Real Estate Market<br />
+  <span style="color: #555;">Backed by <strong>Home Market (Pty) Ltd</strong></span>
+    <nav style="margin-top: 10px;">
+    <a href="privacy-policy.html" style="margin-right: 20px; color: #ffffff; text-decoration: underline;">Privacy Policy</a>
+    <a href="terms-of-use.html" style="margin-right: 20px; color: #ffffff; text-decoration: underline;">Terms of Use</a>
+    <a href="compliance-checklist.html" style="color: #ffffff; text-decoration: underline;">Compliance</a>
+  </nav>
+
+
+</footer>

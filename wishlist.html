@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Wishlist | REM</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .form-page {
+      max-width: 600px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      padding: 12px 25px;
+      background: #2c5364;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav style="background: #2c3e50; padding: 15px;">
+   <ul style="list-style: none; display: flex; gap: 20px; justify-content: center; margin: 0; padding: 0;">
+    <li><a href="index.html" style="color:white; text-decoration:none;">Home</a></li>
+    <li><a href="about.html" style="color:white; text-decoration:none;">About</a></li>
+    <li><a href="ecosystem.html" style="color:white; text-decoration:none;">Ecosystem</a></li>
+    <li><a href="buyers.html" style="color:white; text-decoration:none;">Buyers</a></li>
+    <li><a href="sellers.html" style="color:white; text-decoration:none;">Sellers</a></li>
+    <li><a href="partners.html" style="color:white; text-decoration:none;">Partners</a></li>
+    <li><a href="contact.html" style="color:white; text-decoration:none;">Contact</a></li>
+   </ul>
+  </nav>
+
+  <section class="form-page">
+    <h1>Create Your Wishlist</h1>
+    <p>Tell us exactly what you're looking for — we'll find the homes that match your dream.</p>
+
+    <form action="mailto:support@homemarket.africa" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Full Name" required />
+      <input type="email" name="email" placeholder="Your Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number (optional)" />
+      <select name="location" required>
+        <option value="">Preferred Location</option>
+        <option>Johannesburg</option>
+        <option>Cape Town</option>
+        <option>Durban</option>
+        <option>Other</option>
+      </select>
+      <input type="text" name="budget" placeholder="Budget (ZAR)" required />
+      <textarea name="features" placeholder="Bedrooms, style, must-haves..." rows="6" required></textarea>
+      <button type="submit">Submit Wishlist</button>
+    </form>
+  </section>
+
+  <footer class="footer">© 2025 REM – Real Estate Market. Powered by Home Market (Pty) Ltd.</footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Wishlist Wallet | REM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 40px;
+    }
+    .wallet-wrapper {
+      max-width: 640px;
+      margin: auto;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    p.intro {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #2c5364;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    button:hover {
+      background-color: #203a43;
+    }
+    .confirmation {
+      text-align: center;
+      margin-top: 30px;
+      padding: 18px;
+      background: #eaf8f3;
+      border-left: 6px solid #2ecc71;
+      border-radius: 6px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wallet-wrapper">
+    <h1>🏠 My Wishlist Wallet</h1>
+    <p class="intro">Your personalized buyer profile — save it for yourself or send it to REM.</p>
+
+
+    <form id="wishlist-form">
+      <input name="location" placeholder="Preferred locations (e.g. Cape Town, Stellenbosch)" required />
+      <input name="budget" placeholder="Budget range (e.g. R1.2M – R2.5M)" required />
+      <input name="features" placeholder="Must-haves (e.g. garden, fiber, solar)" />
+      <input name="dealbreakers" placeholder="Deal-breakers (e.g. no HOA, no thatch)" />
+      
+      <button type="button" onclick="saveWishlist()">💾 Save Wishlist</button>
+    </form>
+
+    
+    <form id="send-form" action="https://formsubmit.co/support@homemarket.africa" method="POST">
+      <input type="hidden" name="_subject" value="New Wishlist Wallet Submission!" />
+      <input type="hidden" name="_captcha" value="false">
+      
+      <input type="hidden" name="Preferred Location(s)" id="send-location" />
+      <input type="hidden" name="Budget Range" id="send-budget" />
+      <input type="hidden" name="Must-Haves" id="send-features" />
+      <input type="hidden" name="Deal-Breakers" id="send-dealbreakers" />
+      
+      <button type="submit">📤 Send to REM</button>
+    </form>
+
+    <div class="confirmation" id="thank-you">
+      ✅ Thank you! Your wishlist was submitted — the REM team will get in touch if a match is found.
+    </div>
+  </div>
+
+  <script>
+    function saveWishlist() {
+      const form = document.getElementById('wishlist-form');
+      const data = {
+        location: form.location.value,
+        budget: form.budget.value,
+        features: form.features.value,
+        dealbreakers: form.dealbreakers.value
+      };
+      localStorage.setItem('wishlist-wallet', JSON.stringify(data));
+      alert("Wishlist saved! You can now send it to REM.");
+      
+      // Autofill the send form
+      document.getElementById('send-location').value = data.location;
+      document.getElementById('send-budget').value = data.budget;
+      document.getElementById('send-features').value = data.features;
+      document.getElementById('send-dealbreakers').value = data.dealbreakers;
+    }
+
+    // Load saved wishlist on page load
+    const saved = localStorage.getItem('wishlist-wallet');
+    if (saved) {
+      const data = JSON.parse(saved);
+      document.getElementById('wishlist-form').location.value = data.location;
+      document.getElementById('wishlist-form').budget.value = data.budget;
+      document.getElementById('wishlist-form').features.value = data.features;
+      document.getElementById('wishlist-form').dealbreakers.value = data.dealbreakers;
+
+      // Autofill send form too
+      document.getElementById('send-location').value = data.location;
+      document.getElementById('send-budget').value = data.budget;
+      document.getElementById('send-features').value = data.features;
+      document.getElementById('send-dealbreakers').value = data.dealbreakers;
+    }
+
+    // Show confirmation if redirected after submission
+    if (window.location.href.includes('?success')) {
+      document.getElementById('thank-you').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
