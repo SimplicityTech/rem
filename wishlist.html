@@ -46,7 +46,7 @@
     <h1>Create Your Wishlist</h1>
     <p>Tell us exactly what you're looking for — we'll find the homes that match your dream.</p>
 
-    <form action="mailto:support@homemarket.africa" method="POST" enctype="text/plain">
+    <form action="wishlist.php" method="POST" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Full Name" required />
       <input type="email" name="email" placeholder="Your Email Address" required />
       <input type="tel" name="phone" placeholder="Phone Number (optional)" />
@@ -59,10 +59,15 @@
       </select>
       <input type="text" name="budget" placeholder="Budget (ZAR)" required />
       <textarea name="features" placeholder="Bedrooms, style, must-haves..." rows="6" required></textarea>
+          <label>
+      <input type="checkbox" name="consent" required />
+      I confirm that the information provided is accurate and I consent to Home Market contacting me.
+    </label>
       <button type="submit">Submit Wishlist</button>
     </form>
   </section>
 
   <footer class="footer">© 2025 REM – Real Estate Market. Powered by Home Market (Pty) Ltd.</footer>
 </body>
+
 </html>
