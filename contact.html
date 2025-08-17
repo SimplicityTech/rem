@@ -55,16 +55,13 @@
     <h1>Contact REM</h1>
     <p>We'd love to hear from you. Let us know how REM can help you move forward in property.</p>
 
-    <form action="https://formspree.io/f/mdkdvdzz"
-     method="POST">
-      <label>
+    <form action="contact-handler.php" method="POST"
         <input type="text" name="name" placeholder="Your Name" required />
-      </label>
-      <label>
         <input type="email" name="email" placeholder="Your Email" required />   
-      </label>
-      <label>
         <textarea name="message" rows="6" placeholder="Your Message..." required></textarea>
+      <label>
+      <input type="checkbox" name="consent" required />
+      I consent to REM storing my information for follow-up.
       </label>
       <button type="submit">Send Message</button>
     </form>
@@ -76,3 +73,4 @@
 </body>
 
 </html>
+
