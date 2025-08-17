@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recipient email
-    $to = "omfo@homemarket.africa";
+    $to = "match@homemarket.africa";
     $subject = "New Buyer Wishlist Submission";
 
     // Sanitize and collect form data
@@ -32,3 +32,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
