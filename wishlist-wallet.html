@@ -66,26 +66,23 @@
     <h1>🏠 My Wishlist Wallet</h1>
     <p class="intro">Your personalized buyer profile — save it for yourself or send it to REM.</p>
 
-
     <form id="wishlist-form">
       <input name="location" placeholder="Preferred locations (e.g. Cape Town, Stellenbosch)" required />
       <input name="budget" placeholder="Budget range (e.g. R1.2M – R2.5M)" required />
       <input name="features" placeholder="Must-haves (e.g. garden, fiber, solar)" />
       <input name="dealbreakers" placeholder="Deal-breakers (e.g. no HOA, no thatch)" />
-      
       <button type="button" onclick="saveWishlist()">💾 Save Wishlist</button>
     </form>
 
+    <form id="send-form" action="https://api.staticforms.xyz/submit" method="POST">
+      <input type="hidden" name="accessKey" value="sf_jlddlel8anhj12af4hgf7hg8" />
+      <input type="hidden" name="redirectTo" value="wishlist-wallet.html?success" />
 
-    <form id="send-form" action="wishlist.php" method="POST">>
-      <input type="hidden" name="_subject" value="New Wishlist Wallet Submission!" />
-      <input type="hidden" name="_captcha" value="false">
-      
       <input type="hidden" name="Preferred Location(s)" id="send-location" />
       <input type="hidden" name="Budget Range" id="send-budget" />
       <input type="hidden" name="Must-Haves" id="send-features" />
       <input type="hidden" name="Deal-Breakers" id="send-dealbreakers" />
-      
+
       <button type="submit">📤 Send to REM</button>
     </form>
 
@@ -105,15 +102,13 @@
       };
       localStorage.setItem('wishlist-wallet', JSON.stringify(data));
       alert("Wishlist saved! You can now send it to REM.");
-      
-      // Autofill the send form
+
       document.getElementById('send-location').value = data.location;
       document.getElementById('send-budget').value = data.budget;
       document.getElementById('send-features').value = data.features;
       document.getElementById('send-dealbreakers').value = data.dealbreakers;
     }
 
-    // Load saved wishlist on page load
     const saved = localStorage.getItem('wishlist-wallet');
     if (saved) {
       const data = JSON.parse(saved);
@@ -122,18 +117,15 @@
       document.getElementById('wishlist-form').features.value = data.features;
       document.getElementById('wishlist-form').dealbreakers.value = data.dealbreakers;
 
-      // Autofill send form too
       document.getElementById('send-location').value = data.location;
       document.getElementById('send-budget').value = data.budget;
       document.getElementById('send-features').value = data.features;
       document.getElementById('send-dealbreakers').value = data.dealbreakers;
     }
 
-    // Show confirmation if redirected after submission
     if (window.location.href.includes('?success')) {
       document.getElementById('thank-you').style.display = 'block';
     }
   </script>
 </body>
-
 </html>
