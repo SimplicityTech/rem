@@ -11,6 +11,7 @@
       padding: 60px 20px;
       text-align: center;
     }
+
     input, select, textarea {
       width: 100%;
       padding: 12px;
@@ -19,6 +20,7 @@
       border: 1px solid #ccc;
       font-size: 1rem;
     }
+
     button {
       padding: 12px 25px;
       background: #2c5364;
@@ -27,29 +29,44 @@
       border-radius: 6px;
       cursor: pointer;
     }
+
+    button:hover {
+      background: #1a3a4a;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px 0;
+      font-size: 0.9rem;
+      color: #999;
+    }
   </style>
 </head>
 <body>
   <nav style="background: #2c3e50; padding: 15px;">
-   <ul style="list-style: none; display: flex; gap: 20px; justify-content: center; margin: 0; padding: 0;">
-    <li><a href="index.html" style="color:white; text-decoration:none;">Home</a></li>
-    <li><a href="about.html" style="color:white; text-decoration:none;">About</a></li>
-    <li><a href="ecosystem.html" style="color:white; text-decoration:none;">Ecosystem</a></li>
-    <li><a href="buyers.html" style="color:white; text-decoration:none;">Buyers</a></li>
-    <li><a href="sellers.html" style="color:white; text-decoration:none;">Sellers</a></li>
-    <li><a href="partners.html" style="color:white; text-decoration:none;">Partners</a></li>
-    <li><a href="contact.html" style="color:white; text-decoration:none;">Contact</a></li>
-   </ul>
+    <ul style="list-style: none; display: flex; gap: 20px; justify-content: center; margin: 0; padding: 0;">
+      <li><a href="index.html" style="color:white; text-decoration:none;">Home</a></li>
+      <li><a href="about.html" style="color:white; text-decoration:none;">About</a></li>
+      <li><a href="ecosystem.html" style="color:white; text-decoration:none;">Ecosystem</a></li>
+      <li><a href="buyers.html" style="color:white; text-decoration:none;">Buyers</a></li>
+      <li><a href="sellers.html" style="color:white; text-decoration:none;">Sellers</a></li>
+      <li><a href="partners.html" style="color:white; text-decoration:none;">Partners</a></li>
+      <li><a href="contact.html" style="color:white; text-decoration:none;">Contact</a></li>
+    </ul>
   </nav>
 
   <section class="form-page">
     <h1>Create Your Wishlist</h1>
     <p>Tell us exactly what you're looking for — we'll find the homes that match your dream.</p>
 
-    <form action="wishlist.php" method="POST">
+    <form action="https://api.staticforms.xyz/submit" method="POST">
+      <input type="hidden" name="accessKey" value="sf_jlddlel8anhj12af4hgf7hg8" />
+      <input type="hidden" name="redirectTo" value="thank-you.html" />
+
       <input type="text" name="name" placeholder="Your Full Name" required />
       <input type="email" name="email" placeholder="Your Email Address" required />
       <input type="tel" name="phone" placeholder="Phone Number (optional)" />
+
       <select name="location" required>
         <option value="">Preferred Location</option>
         <option>Johannesburg</option>
@@ -57,18 +74,21 @@
         <option>Durban</option>
         <option>Other</option>
       </select>
+
       <input type="text" name="budget" placeholder="Budget (ZAR)" required />
       <textarea name="features" placeholder="Bedrooms, style, must-haves..." rows="6" required></textarea>
-          <label>
-      <input type="checkbox" name="consent" required />
-      I confirm that the information provided is accurate and I consent to Home Market contacting me.
-    </label>
+
+      <label>
+        <input type="checkbox" name="consent" required />
+        I confirm that the information provided is accurate and I consent to Home Market contacting me.
+      </label>
+
       <button type="submit">Submit Wishlist</button>
     </form>
   </section>
 
-  <footer class="footer">© 2025 REM – Real Estate Market. Powered by Home Market (Pty) Ltd.</footer>
+  <footer class="footer">
+    © 2025 REM – Real Estate Market. Powered by Home Market (Pty) Ltd.
+  </footer>
 </body>
-
 </html>
-
