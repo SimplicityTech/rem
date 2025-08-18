@@ -40,29 +40,34 @@
 </head>
 <body>
   <nav style="background: #2c3e50; padding: 15px;">
-   <ul style="list-style: none; display: flex; gap: 20px; justify-content: center; margin: 0; padding: 0;">
-    <li><a href="index.html" style="color:white; text-decoration:none;">Home</a></li>
-    <li><a href="about.html" style="color:white; text-decoration:none;">About</a></li>
-    <li><a href="ecosystem.html" style="color:white; text-decoration:none;">Ecosystem</a></li>
-    <li><a href="buyers.html" style="color:white; text-decoration:none;">Buyers</a></li>
-    <li><a href="sellers.html" style="color:white; text-decoration:none;">Sellers</a></li>
-    <li><a href="partners.html" style="color:white; text-decoration:none;">Partners</a></li>
-    <li><a href="contact.html" style="color:white; text-decoration:none;">Contact</a></li>
-   </ul>
+    <ul style="list-style: none; display: flex; gap: 20px; justify-content: center; margin: 0; padding: 0;">
+      <li><a href="index.html" style="color:white; text-decoration:none;">Home</a></li>
+      <li><a href="about.html" style="color:white; text-decoration:none;">About</a></li>
+      <li><a href="ecosystem.html" style="color:white; text-decoration:none;">Ecosystem</a></li>
+      <li><a href="buyers.html" style="color:white; text-decoration:none;">Buyers</a></li>
+      <li><a href="sellers.html" style="color:white; text-decoration:none;">Sellers</a></li>
+      <li><a href="partners.html" style="color:white; text-decoration:none;">Partners</a></li>
+      <li><a href="contact.html" style="color:white; text-decoration:none;">Contact</a></li>
+    </ul>
   </nav>
 
   <section class="contact-page">
     <h1>Contact REM</h1>
     <p>We'd love to hear from you. Let us know how REM can help you move forward in property.</p>
 
-    <form action="contact-handler.php" method="POST"
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />   
-        <textarea name="message" rows="6" placeholder="Your Message..." required></textarea>
+    <form action="https://api.staticforms.xyz/submit" method="POST">
+      <input type="hidden" name="accessKey" value="sf_jlddlel8anhj12af4hgf7hg8" />
+      <input type="hidden" name="redirectTo" value="thank-you.html" />
+
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="6" placeholder="Your Message..." required></textarea>
+
       <label>
-      <input type="checkbox" name="consent" required />
-      I consent to REM storing my information for follow-up.
+        <input type="checkbox" name="consent" required />
+        I consent to REM storing my information for follow-up.
       </label>
+
       <button type="submit">Send Message</button>
     </form>
   </section>
@@ -71,6 +76,5 @@
     © 2025 REM – Real Estate Market. A brand of Home Market (Pty) Ltd.
   </footer>
 </body>
-
 </html>
 
