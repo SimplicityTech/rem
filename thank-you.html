@@ -11,6 +11,7 @@
       color: #333;
       text-align: center;
       padding: 50px 20px;
+      margin: 0;
     }
 
     .container {
@@ -42,7 +43,7 @@
     .btn {
       display: inline-block;
       padding: 12px 24px;
-      background-color: #4CAF50;
+      background-color: #2c5364;
       color: white;
       text-decoration: none;
       border-radius: 6px;
@@ -51,7 +52,7 @@
     }
 
     .btn:hover {
-      background-color: #45a049;
+      background-color: #1a3a4a;
     }
   </style>
 </head>
@@ -66,35 +67,37 @@
   </div>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const formType = params.get("form");
+    document.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      const formType = params.get("form");
 
-    const messages = {
-      wishlist: {
-        title: "Thank you for sharing your Wishlist!",
-        subtext: "We're excited to help you find your dream property. Our team is already on it."
-      },
-      seller: {
-        title: "Thanks for submitting your property!",
-        subtext: "We'll verify your details and reach out with next steps. You're in trusted hands."
-      },
-      partner: {
-        title: "Welcome aboard, Partner!",
-        subtext: "We're thrilled to explore opportunities with you. Let’s build something remarkable together."
-      },
-      contact: {
-        title: "Thanks for reaching out!",
-        subtext: "We’ll respond with care and urgency. Your message matters to us."
+      const messages = {
+        wishlist: {
+          title: "Thank you for sharing your Wishlist!",
+          subtext: "We're excited to help you find your dream property. Our team is already on it."
+        },
+        seller: {
+          title: "Thanks for submitting your property!",
+          subtext: "We'll verify your details and reach out with next steps. You're in trusted hands."
+        },
+        partner: {
+          title: "Welcome aboard, Partner!",
+          subtext: "We're thrilled to explore opportunities with you. Let’s build something remarkable together."
+        },
+        contact: {
+          title: "Thanks for reaching out!",
+          subtext: "We’ll respond with care and urgency. Your message matters to us."
+        }
+      };
+
+      const messageEl = document.getElementById("message");
+      const subtextEl = document.getElementById("subtext");
+
+      if (messages[formType]) {
+        messageEl.textContent = messages[formType].title;
+        subtextEl.textContent = messages[formType].subtext;
       }
-    };
-
-    const messageEl = document.getElementById("message");
-    const subtextEl = document.getElementById("subtext");
-
-    if (messages[formType]) {
-      messageEl.textContent = messages[formType].title;
-      subtextEl.textContent = messages[formType].subtext;
-    }
+    });
   </script>
 </body>
 </html>
