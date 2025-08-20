@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Create Wishlist | REM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
@@ -90,7 +91,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -103,19 +103,14 @@
     </ul>
   </nav>
 
-  <!-- Wishlist Form -->
   <section class="form-page">
     <h1>Create Your Wishlist</h1>
     <p>Tell us exactly what you're looking for — we'll find the homes that match your dream.</p>
 
     <form action="https://api.staticforms.xyz/submit" method="POST">
-      <!-- StaticForm Access Key -->
       <input type="hidden" name="accessKey" value="sf_jlddlel8anhj12af4hgf7hg8" />
-
-      <!-- Redirect to Thank You Page -->
-      <input type="hidden" name="redirectTo" value="thank-you.html?form=wishlist" />
-
-      <!-- Form Fields -->
+      <input type="hidden" name="redirectTo" value="https://simplicitytech.github.io/rem/thank-you.html?form=wishlist" />
+      
       <input type="text" name="name" placeholder="Your Full Name" required />
       <input type="email" name="email" placeholder="Your Email Address" required />
       <input type="tel" name="phone" placeholder="Phone Number (optional)" />
@@ -140,10 +135,10 @@
     </form>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     © 2025 REM – Real Estate Market. Powered by Home Market (Pty) Ltd.
   </footer>
 
 </body>
 </html>
+
