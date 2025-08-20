@@ -3,66 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You – Home Market</title>
+  <title>Thank You – REM</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      text-align: center;
-      padding: 50px 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px;
       margin: 0;
     }
-
     .container {
-      max-width: 600px;
+      max-width: 640px;
       margin: auto;
       background: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      text-align: center;
     }
-
-    .logo {
-      width: 120px;
-      margin-bottom: 20px;
-    }
-
     h1 {
-      font-size: 28px;
-      color: #2a2a2a;
+      font-size: 1.8rem;
+      color: #2c3e50;
       margin-bottom: 20px;
     }
-
     p {
-      font-size: 16px;
+      font-size: 1rem;
       color: #555;
       margin-bottom: 30px;
     }
-
-    .btn {
+    a.btn {
       display: inline-block;
-      padding: 12px 24px;
       background-color: #2c5364;
       color: white;
+      padding: 12px 24px;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
-      transition: background-color 0.3s ease;
     }
-
-    .btn:hover {
-      background-color: #1a3a4a;
+    a.btn:hover {
+      background-color: #203a43;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px 0;
+      font-size: 0.9rem;
+      color: #999;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="remlogo.png" alt="REM Logo" class="logo" />
     <h1 id="message">Thank you!</h1>
     <p id="subtext">Your submission has been received. We're honored to walk this journey with you.</p>
     <a href="index.html" class="btn">Return to Home</a>
   </div>
+
+  <footer class="footer">
+    © 2025 REM – Real Estate Market. A brand of Home Market (Pty) Ltd.
+  </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -71,20 +68,24 @@
 
       const messages = {
         wishlist: {
-          title: "Thank you for sharing your Wishlist!",
-          subtext: "We're excited to help you find your dream property. Our team is already on it."
+          title: "Thank you for submitting your Wishlist.",
+          subtext: "Our team is reviewing your preferences and will reach out when a match is found."
         },
         seller: {
-          title: "Thanks for submitting your property!",
-          subtext: "We'll verify your details and reach out with next steps. You're in trusted hands."
+          title: "Your property has been submitted.",
+          subtext: "We’ll verify your details and notify you if a buyer match is available."
         },
         partner: {
-          title: "Welcome aboard, Partner!",
-          subtext: "We're thrilled to explore opportunities with you. Let’s build something remarkable together."
+          title: "Thank you for your interest in partnering with REM.",
+          subtext: "We’ll review your proposal and contact you to explore collaboration."
+        },
+        "partner-join": {
+          title: "Your partnership request has been received.",
+          subtext: "We’re excited to explore synergies with your organization."
         },
         contact: {
-          title: "Thanks for reaching out!",
-          subtext: "We’ll respond with care and urgency. Your message matters to us."
+          title: "Your message has been received.",
+          subtext: "We’ll respond shortly with care and attention."
         }
       };
 
